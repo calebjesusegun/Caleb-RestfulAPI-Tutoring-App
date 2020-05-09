@@ -2,7 +2,9 @@
 
 ### CALEB API DOCUMENTATION FOR A RESTFUL TUTORING SERVER
 
-#### 1.) First of all, after cloning the REPO ensure you run NPM INSTALL
+#### 1a.) First of all, after cloning the REPO ensure you run NPM INSTALL
+
+#### 1b.) You will find the Models, Routes, Controllers, Middleware folders inside the "./api./v1" Directory
 
 #### 2.) I made use of nodemon, so after downloading the modules always use NPM START
 
