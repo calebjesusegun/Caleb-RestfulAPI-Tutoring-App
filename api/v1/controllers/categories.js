@@ -70,3 +70,49 @@ exports.create_category = (req, res, next) => {
          });
       });
 }
+
+exports.Get_category_ByID = (req, res, next) => {
+   Category.findById(req.params.categoryId)
+      .populate('categorySubject')
+      .exec()
+      .then(category => {
+         if (!category) {
+            return res.status(404).json({
+               message: "Category not found!!!"
+            });
+         }
+         res.status(200).json({
+            category: category,
+            request: {
+               type: 'GET',
+               url: 'http://localhost:3000/categories/'
+            }
+         });
+      })
+      .catch(err => {
+         res.status(500).json({
+            error: err
+         });
+      });
+}
+
+exports.categories_delete = (req, res, next) => {
+   Category.remove({ _id: req.params.categoryId })
+      .exec()
+      .then(result => {
+         res.status(200).json({
+            message: 'Category deleted',
+            request: {
+               type: 'GET',
+               url: 'http://localhost:3000/categories/',
+               body: { subjectId: 'ID', categoryName: 'String' }
+            }
+         });
+
+      })
+      .catch(err => {
+         res.status(500).json({
+            error: err
+         });
+      });
+}
