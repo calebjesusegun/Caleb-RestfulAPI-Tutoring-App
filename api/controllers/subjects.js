@@ -2,7 +2,8 @@ const Subject = require("../models/subject");
 const mongoose = require("mongoose");
 
 exports.subjects_get_all = (req, res, next) => {
-   Subject.find()
+   Subject.find({})
+      .sort({ subjectName: '1' })
       .select('subjectName subjectType _id')
       .exec()
       .then(docs => {

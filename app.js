@@ -4,10 +4,11 @@ const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
-const subjectRoutes = require('./api/v1/routes/subjects');
-const lessonRoutes = require('./api/v1/routes/lessons');
-const categoryRoutes = require('./api/v1/routes/categories');
-const userRoutes = require('./api/v1/routes/user');
+const subjectRoutes = require('./api/routes/subjects');
+const lessonRoutes = require('./api/routes/lessons');
+const categoryRoutes = require('./api/routes/categories');
+const userRoutes = require('./api/routes/user');
+const userTutorRoutes = require('./api/routes/userTutor');
 
 mongoose.connect('mongodb+srv://node-tutoring:' + process.env.MONGO_ATLAS_PW + '@node-rest-tutoring-aabco.mongodb.net/test?retryWrites=true&w=majority', {
    //useMongoClient: true,
@@ -31,10 +32,11 @@ app.use(bodyParser.json());
 // });
 
 //ROUTES WHICH SHOULD HANDLE REQUESTS
-app.use('/subjects', subjectRoutes);
-app.use('/categories', categoryRoutes);
-app.use('/lessons', lessonRoutes);
-app.use('/user', userRoutes);
+app.use('/api/v1/subjects', subjectRoutes);
+app.use('/api/v1/categories', categoryRoutes);
+app.use('/api/v1/lessons', lessonRoutes);
+app.use('/api/v1/user', userRoutes);
+app.use('/api/v1/userTutor', userTutorRoutes);
 
 app.use((req, res, next) => {
    const error = new Error('Not Found');
