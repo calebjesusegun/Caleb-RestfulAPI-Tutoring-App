@@ -1,8 +1,8 @@
 # Caleb-RestfulAPI-Tutoring-App
 
-CALEB API DOCUMENTATION FOR A RESTFUL TUTORING SERVER
+##CALEB API DOCUMENTATION FOR A RESTFUL TUTORING SERVER
 
-1.) First of all, after cloning the REPO ensure you run NPM INSTALL
+##1.) First of all, after cloning the REPO ensure you run NPM INSTALL
 
 2.) I made use of nodemon, so after downloading the modules always use NPM RUN START:DEV
 
