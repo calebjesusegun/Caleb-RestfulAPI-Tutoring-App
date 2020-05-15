@@ -10,7 +10,7 @@ const categoryRoutes = require('./api/routes/categories');
 const userRoutes = require('./api/routes/user');
 const userTutorRoutes = require('./api/routes/userTutor');
 
-mongoose.connect('mongodb+srv://node-tutoring:' + process.env.MONGO_ATLAS_PW + '@node-rest-tutoring-aabco.mongodb.net/test?retryWrites=true&w=majority', {
+mongoose.connect('mongodb+srv://node-tutoring:node-tutoring@node-rest-tutoring-aabco.mongodb.net/test?retryWrites=true&w=majority', {
    //useMongoClient: true,
    useUnifiedTopology: true,
    useNewUrlParser: true
